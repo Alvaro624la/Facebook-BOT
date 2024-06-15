@@ -1,5 +1,229 @@
 class PopUpsClass():
-    def CREDENTIALS(info_to_user_message):
+    def LANGUAGE(info_to_user_message):
+        return f"""
+            let html_user_language_cont_1 = document.createElement('div');
+            html_user_language_cont_1.style.cssText = `
+                color: #fff;
+                position: fixed; 
+                top: 0; 
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 90px 0 0 2em; 
+                background-color: #0c0c0c; 
+                z-index: 9998;
+                overflow-y: auto
+            `; 
+            document.body.appendChild(html_user_language_cont_1);
+
+            let language_selected = document.createElement('p');
+            language_selected.id = 'language_selected';
+            language_selected.innerHTML = 'False';
+            language_selected.style.cssText = `
+                display: none;
+            `;
+            html_user_language_cont_1.appendChild(language_selected);
+
+            let language_final_selected_name = document.createElement('p');
+            language_final_selected_name.id = 'language_final_selected_name';
+            language_final_selected_name.innerHTML = 'ES';
+            language_final_selected_name.style.cssText = `
+                display: none;
+            `;
+            html_user_language_cont_1.appendChild(language_final_selected_name);
+
+            let html_user_message_cont_0 = document.createElement('p');
+            html_user_message_cont_0.textContent = '{info_to_user_message}';
+            html_user_message_cont_0.style.cssText = `
+                color: #fff;
+                font-size: 1.2em;
+                padding: 0 1em;
+                z-index: 9998
+            `; 
+            html_user_language_cont_1.appendChild(html_user_message_cont_0);
+            
+            let html_user_language_cont_1_1 = document.createElement('div'); 
+            html_user_language_cont_1_1.style.cssText = `
+                // width: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                z-index: 9998
+            `; 
+            html_user_language_cont_1.appendChild(html_user_language_cont_1_1);
+
+            let html_user_language_button_ES_cont_1_1_1 = document.createElement('input');
+            html_user_language_button_ES_cont_1_1_1.type = 'button';
+            // html_user_language_button_ES_cont_1_1_1.name = 'ES';
+            html_user_language_button_ES_cont_1_1_1.value = 'Español';
+            html_user_language_button_ES_cont_1_1_1.id = 'language_ES';
+            html_user_language_button_ES_cont_1_1_1.style.cssText = `
+                padding: 1em;
+                background-color: #fff;
+                color: #000;
+                border-radius: 5px;
+                z-index: 9998;
+                border: 1px solid #000;
+                width: 100px;
+                height: 60px;
+                cursor: pointer
+            `; 
+            html_user_language_cont_1_1.appendChild(html_user_language_button_ES_cont_1_1_1);
+
+            let html_user_language_button_EN_cont_1_1_2 = document.createElement('input');
+            html_user_language_button_EN_cont_1_1_2.type = 'button';
+            // html_user_language_button_EN_cont_1_1_2.name = 'EN';
+            html_user_language_button_EN_cont_1_1_2.value = 'English';
+            html_user_language_button_EN_cont_1_1_2.id = 'language_EN';
+            html_user_language_button_EN_cont_1_1_2.style.cssText = `
+                padding: 1em;
+                background-color: #fff;
+                color: #000;
+                border-radius: 5px;
+                z-index: 9998;
+                border: 1px solid #000;
+                width: 100px;
+                height: 60px;
+                cursor: pointer
+            `; 
+            html_user_language_cont_1_1.appendChild(html_user_language_button_EN_cont_1_1_2);
+
+            html_user_language_button_ES_cont_1_1_1.addEventListener('mouseenter', () => {{
+                html_user_language_button_ES_cont_1_1_1.style.cssText = `
+                    padding: 1em;
+                    background-color: #aaa;
+                    color: #000;
+                    border-radius: 5px;
+                    z-index: 9998;
+                    border: 1px solid #000;
+                    width: 100px;
+                    height: 60px;
+                    cursor: pointer
+                `;
+            }});
+
+            html_user_language_button_ES_cont_1_1_1.addEventListener('mouseleave', () => {{
+                html_user_language_button_ES_cont_1_1_1.style.cssText = `
+                    padding: 1em;
+                    background-color: #fff;
+                    color: #000;
+                    border-radius: 5px;
+                    z-index: 9998;
+                    border: 1px solid #000;
+                    width: 100px;
+                    height: 60px;
+                    cursor: pointer
+                `;
+            }});
+
+            html_user_language_button_ES_cont_1_1_1.addEventListener('mousedown', () => {{
+                html_user_language_button_ES_cont_1_1_1.style.cssText = `
+                    transform: scale(0.95);
+                    padding: 1em;
+                    background-color: #aaa;
+                    color: #000;
+                    border-radius: 5px;
+                    z-index: 9998;
+                    border: 1px solid #000;
+                    width: 100px;
+                    height: 60px;
+                    cursor: pointer
+                `;
+            }});
+
+            html_user_language_button_ES_cont_1_1_1.addEventListener('mouseup', () => {{
+                html_user_language_button_ES_cont_1_1_1.style.cssText = `
+                    transform: scale(1);
+                    padding: 1em;
+                    background-color: #aaa;
+                    color: #000;
+                    border-radius: 5px;
+                    z-index: 9998;
+                    border: 1px solid #000;
+                    width: 100px;
+                    height: 60px;
+                    cursor: pointer
+                `;
+            }});
+            
+            html_user_language_button_EN_cont_1_1_2.addEventListener('mouseenter', () => {{
+                html_user_language_button_EN_cont_1_1_2.style.cssText = `
+                    padding: 1em;
+                    background-color: #aaa;
+                    color: #000;
+                    border-radius: 5px;
+                    z-index: 9998;
+                    border: 1px solid #000;
+                    width: 100px;
+                    height: 60px;
+                    cursor: pointer
+                `;
+            }});
+
+            html_user_language_button_EN_cont_1_1_2.addEventListener('mouseleave', () => {{
+                html_user_language_button_EN_cont_1_1_2.style.cssText = `
+                    padding: 1em;
+                    background-color: #fff;
+                    color: #000;
+                    border-radius: 5px;
+                    z-index: 9998;
+                    border: 1px solid #000;
+                    width: 100px;
+                    height: 60px;
+                    cursor: pointer
+                `;
+            }});
+
+            html_user_language_button_EN_cont_1_1_2.addEventListener('mousedown', () => {{
+                html_user_language_button_EN_cont_1_1_2.style.cssText = `
+                    transform: scale(0.95);
+                    padding: 1em;
+                    background-color: #aaa;
+                    color: #000;
+                    border-radius: 5px;
+                    z-index: 9998;
+                    border: 1px solid #000;
+                    width: 100px;
+                    height: 60px;
+                    cursor: pointer
+                `;
+            }});
+
+            html_user_language_button_EN_cont_1_1_2.addEventListener('mouseup', () => {{
+                html_user_language_button_EN_cont_1_1_2.style.cssText = `
+                    transform: scale(1);
+                    padding: 1em;
+                    background-color: #aaa;
+                    color: #000;
+                    border-radius: 5px;
+                    z-index: 9998;
+                    border: 1px solid #000;
+                    width: 100px;
+                    height: 60px;
+                    cursor: pointer
+                `;
+            }});
+
+            html_user_language_button_ES_cont_1_1_1.addEventListener('click', () => {{
+                html_user_language_cont_1.style.cssText = `
+                    display: none;
+                `;
+                language_final_selected_name.innerHTML = 'ES';
+                language_selected.innerHTML = 'True';
+            }});
+
+            html_user_language_button_EN_cont_1_1_2.addEventListener('click', () => {{
+                html_user_language_cont_1.style.cssText = `
+                    display: none;
+                `;
+                language_final_selected_name.innerHTML = 'EN';
+                language_selected.innerHTML = 'True';
+            }});
+        """
+    def CREDENTIALS(info_to_user_message, t_ask_credentials_user, t_ask_credentials_password, t_ask_credentials_Accept):
         return f"""
             let html_user_credentials_cont_1 = document.createElement('div');
             html_user_credentials_cont_1.style.cssText = `
@@ -48,7 +272,7 @@ class PopUpsClass():
             html_user_credentials_cont_1.appendChild(html_user_name_cont_1_1);
 
             let html_user_name_label_cont_1_1_1 = document.createElement('p'); 
-            html_user_name_label_cont_1_1_1.textContent = 'Usuario / Email';
+            html_user_name_label_cont_1_1_1.textContent = '{t_ask_credentials_user}';
             html_user_name_label_cont_1_1_1.style.cssText = `
                 color: #fff;
                 font-size: 1.1em;
@@ -87,7 +311,7 @@ class PopUpsClass():
             html_user_credentials_cont_1.appendChild(html_user_password_cont_1_2);
 
             let html_user_password_label_cont_1_2_1 = document.createElement('p'); 
-            html_user_password_label_cont_1_2_1.textContent = 'Contraseña';
+            html_user_password_label_cont_1_2_1.textContent = '{t_ask_credentials_password}';
             html_user_password_label_cont_1_2_1.style.cssText = `
                 color: #fff;
                 font-size: 1.1em;
@@ -114,7 +338,7 @@ class PopUpsClass():
             html_user_password_cont_1_2.appendChild(html_user_password_input_cont_1_2_2);
 
             let html_credentials_button_cont_1_3 = document.createElement('button');
-            html_credentials_button_cont_1_3.textContent = 'Aceptar';
+            html_credentials_button_cont_1_3.textContent = '{t_ask_credentials_Accept}';
             html_credentials_button_cont_1_3.style.cssText = `
                 padding: 1em;
                 background-color: #fff;
@@ -193,10 +417,10 @@ class PopUpsClass():
                 credenciales_introducidos.innerHTML = 'True';
             }});
         """
-    def QUICK_MESSAGE(info_to_user_message):
+    def QUICK_MESSAGE(t_facebook_login_info_to_user_message):
         return f"""
             let html_mensaje = document.createElement('div'); 
-            html_mensaje.textContent = '{info_to_user_message}'; 
+            html_mensaje.textContent = '{t_facebook_login_info_to_user_message}'; 
             html_mensaje.style.cssText = `
                 font-size: 1.2em; 
                 position: fixed; 
@@ -209,7 +433,7 @@ class PopUpsClass():
             `; 
             document.body.appendChild(html_mensaje);
         """
-    def GROUP_SELECTION(info_to_user_message, arr_obj_grupos_obtenidos):
+    def GROUP_SELECTION(info_to_user_message, arr_obj_grupos_obtenidos, t_ask_group_selection_accept):
         return f"""
             let html_seleccion_grupos_cont_1 = document.createElement('div');
             let html_info_to_user_message_cont_1_1 = document.createElement('p');
@@ -229,7 +453,7 @@ class PopUpsClass():
             let arr2 = [];
             let indicesTrue = [];
             let html_linkDivButtonDown_cont_1_2 = document.createElement('button');
-            html_linkDivButtonDown_cont_1_2.textContent = 'Aceptar';
+            html_linkDivButtonDown_cont_1_2.textContent = '{t_ask_group_selection_accept}';
             html_seleccion_grupos_cont_1.appendChild(html_linkDivButtonDown_cont_1_2);
             html_linkDivButtonDown_cont_1_2.style.cssText = `
                 padding: 1em;
@@ -392,7 +616,7 @@ class PopUpsClass():
             `;
             document.body.appendChild(html_seleccion_grupos_cont_1);
         """
-    def CREATE_POST(info_to_user_message):
+    def CREATE_POST(t_crear_post_info_to_user_message, t_create_post_publicar):
         return f"""
             let html_create_post_cont_1 = document.createElement('div');
             html_create_post_cont_1.style.cssText = `
@@ -420,7 +644,7 @@ class PopUpsClass():
             html_create_post_cont_1.appendChild(post_creado);
 
             let html_create_post_mensaje_cont_1_1 = document.createElement('p');
-            html_create_post_mensaje_cont_1_1.textContent = '{info_to_user_message}';
+            html_create_post_mensaje_cont_1_1.textContent = '{t_crear_post_info_to_user_message}';
             html_create_post_mensaje_cont_1_1.style.cssText = `
                 color: #fff;
                 font-size: 1.2em;
@@ -450,7 +674,7 @@ class PopUpsClass():
             html_create_post_cont_1.appendChild(html_create_post_input_cont_1_2);
 
             let html_create_post_button_cont_1_3 = document.createElement('button');
-            html_create_post_button_cont_1_3.textContent = 'Publicar';
+            html_create_post_button_cont_1_3.textContent = '{t_create_post_publicar}';
             html_create_post_button_cont_1_3.style.cssText = `
                 background-color: #22478e;
                 padding: 1em;
