@@ -13,7 +13,7 @@ This script can run in the background or in parallel. That's the difference betw
 For the moment, only can be used to text, links, etc. posts, no for multimedia stuff.
 
 > [!NOTE]
-> English version coming soon... Right now the script is only available in Spanish.
+> English version now available! Since v.2.1.0.
 
 ## Index
 - [Exporting to an executable (.exe) and running it](#how-to-export-to-executable-exe-and-run-it)

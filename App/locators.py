@@ -1,0 +1,20 @@
+from selenium.webdriver.common.by import By
+
+class LocatorsClass():
+    COOKIES_ES                  = (By.XPATH, '//div[@aria-label="Rechazar cookies opcionales"]')
+    COOKIES_CA                  = (By.XPATH, '//div[@aria-label="Rebutjar cookies opcionals"]')
+    COOKIES_EN                  = (By.XPATH, '//div[@aria-label="Reject optional cookies"]')
+    LOGIN_EMAIL                 = (By.ID, "email")
+    LOGIN_PASS                  = (By.ID, "pass")
+    LOGIN_BTN                   = (By.XPATH, "//button[@name='login']")
+    LOGIN_FORGOTTEN_PASS_LINK   = (By.CLASS_NAME, '_97w4')
+    LOGIN_ERR_MSG_1             = (By.CLASS_NAME, '_9ay7')
+    LOGIN_ERR_MSG_2             = (By.CLASS_NAME, '_akzt')
+    GROUPS_BTN                  = (By.XPATH, '//a[@aria-label="Grupos" or @aria-label="Groups" or @href="https://www.facebook.com/groups/?ref=bookmarks"]')
+    GROUP_WRITE_STG_LINEBOX_ES  = (By.XPATH, '//span[contains(text(), "Escribe algo")]')
+    GROUP_WRITE_STG_LINEBOX_EN  = (By.XPATH, '//span[contains(text(), "Write something")]')
+    WARNING_LINK_POPUP_ES       = (By.XPATH, '//span[text()="Compartir de todas formas"]')
+    WARNING_LINK_POPUP_EN       = (By.XPATH, '//span[text()="Share"]')
+    POST_WRITE_BOX              = (By.XPATH, '//div[contains(@class, "_1mf") and contains(@class, "_1mj")]')
+    POST_BTN_ES                 = (By.XPATH, '//div[@aria-label="Publicar"]')
+    POST_BTN_EN                 = (By.XPATH, '//div[@aria-label="Post"]')
