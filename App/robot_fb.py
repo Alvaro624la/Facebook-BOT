@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import re
 import time 
+# import tensorflow as tf
 # alternativa para el módulo time: 'from time import sleep' y luego usar solo 'sleep()' o solo 'localtime()'
 
 # DRIVER MANAGER https://github.com/SergeyPirogov/webdriver_manager?tab=readme-ov-file#use-with-chrome 
@@ -202,12 +203,14 @@ def cookies():
         WebDriverWait(driver, 5).until(EC.any_of(
             EC.presence_of_element_located((loc.COOKIES_ES)),
             EC.presence_of_element_located((loc.COOKIES_CA)),
-            EC.presence_of_element_located((loc.COOKIES_EN))
+            EC.presence_of_element_located((loc.COOKIES_EN_1)),
+            EC.presence_of_element_located((loc.COOKIES_EN_2))
         ))
         btn_cookies = WebDriverWait(driver, 5).until(EC.any_of(
             EC.element_to_be_clickable((loc.COOKIES_ES)),
             EC.element_to_be_clickable((loc.COOKIES_CA)),
-            EC.element_to_be_clickable((loc.COOKIES_EN))
+            EC.element_to_be_clickable((loc.COOKIES_EN_1)),
+            EC.element_to_be_clickable((loc.COOKIES_EN_2))
         ))
         btn_cookies.click()
         print(t_cookies_rechazando_cookies_opcionales)
@@ -219,7 +222,7 @@ intentos_inicio_sesion = 0
 def facebook_login():
     global intentos_inicio_sesion
     if intentos_inicio_sesion >= 3:
-        print({intentos_inicio_sesion} + " " + {t_intentos_inicio_sesion_msg})
+        print({intentos_inicio_sesion} + " " + {t_facebook_login_intentos_inicio_sesion_msg})
         time.sleep(15)
         driver.close()
     try:
@@ -543,6 +546,7 @@ def mensage_final_cerrar_bot():
     driver.close()
 
 
+
 ############################################################################
 ################################# FUNCIONES ################################
 ############################################################################
@@ -583,3 +587,26 @@ arr_links_grupos_obtenidos = finds_links_with_ids_ocultos_arr()
 publicar_en_cada_grupo()
 # AGRADECIMIENTOS Y CERRAR
 mensage_final_cerrar_bot()
+
+
+
+
+
+
+
+###############################################################################
+# TENSORES (todavía en desarrollo)
+# Cargar modelo
+# TF_ENABLE_ONEDNN_OPTS=0
+# interpreter = tf.lite.Interpreter(model_path="modelo.tflite")
+
+# # Si tengo problemas con un delegado, lo omito o cambio a CPU
+# interpreter.allocate_tensors()
+
+# # Inspecciona tensores
+# input_details = interpreter.get_input_details()
+# output_details = interpreter.get_output_details()
+
+# # Verifica tamaños de entrada
+# print("Entradas:", input_details)
+# print("Salidas:", output_details)

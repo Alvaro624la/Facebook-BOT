@@ -52,7 +52,11 @@ Example: pyinstaller robot_fb.py
 
 ### Tools and Python Modules:
 - **Selenium**: A tool for automating web browsers. It provides a way for developers to write scripts in various programming languages to automate interactions with web applications. I personally used Python.
+How to install:
+```pip install selenium```
 - **webdriver_manager**: To simplify management of binary drivers for different browsers. To not to repeat all these steps (download the chromedriver binary...unzip it somewhere on your PC...set the path to this driver) again and again every time a new version of the driver is released.
+How to install:
+```pip install webdriver-manager```
 - **re**: Module in Python for regular expressions. It provides a set of functions that allows us to search a string for a match or replace matches with other strings. I use this module to find all the group links.
 - **time**: A time module in Python that provides various time-related functions. I used that to have some time between some process to pause the script execution to production or for me as a developer to make the tests. Ex: ```time.sleep(5)```
 
@@ -63,6 +67,10 @@ Example: pyinstaller robot_fb.py
 ## Developing:
 - Maybe improve the way you can write the post.
 - Post images, videos, and more. Not only text.
+
+## Images:
+![Facebook BOT, by Alvaro624la - App capture 1.](/img1.png)
+![Facebook BOT, by Alvaro624la - App capture 2.](/img2.png)
 
 <!--
 !['s Stats](https://github-readme-stats.vercel.app/api?username=Alvaro624la&theme=vue-dark&show_icons=true&hide_border=true&count_private=true)

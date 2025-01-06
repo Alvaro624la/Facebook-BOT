@@ -3,7 +3,8 @@ from selenium.webdriver.common.by import By
 class LocatorsClass():
     COOKIES_ES                  = (By.XPATH, '//div[@aria-label="Rechazar cookies opcionales"]')
     COOKIES_CA                  = (By.XPATH, '//div[@aria-label="Rebutjar cookies opcionals"]')
-    COOKIES_EN                  = (By.XPATH, '//div[@aria-label="Reject optional cookies"]')
+    COOKIES_EN_1                = (By.XPATH, '//div[@aria-label="Reject optional cookies"]')
+    COOKIES_EN_2                = (By.XPATH, '//div[@aria-label="Decline optional cookies"]')
     LOGIN_EMAIL                 = (By.ID, "email")
     LOGIN_PASS                  = (By.ID, "pass")
     LOGIN_BTN                   = (By.XPATH, "//button[@name='login']")
