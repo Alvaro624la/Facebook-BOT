@@ -26,8 +26,7 @@ For the moment, only can be used to text, links, etc. posts, no for multimedia s
 You have to **open the project folder in your VSC**, not only the file project. 
 
 In this case: 
-- ../Facebook BOT/ES/
-- ../Facebook BOT/EN/
+- ../Facebook BOT/
 
 ### 2. Pyinstaller tool
 Install cx-Freeze in your terminal:
@@ -36,7 +35,7 @@ Install cx-Freeze in your terminal:
 Build the complete executable folder
 - ```pyinstaller py_file_name.py``` 
 
-Example: pyinstaller robot_fb.py
+Example: pyinstaller App\robot_fb.py
 
 ## How access to this executable proyect?
 - Enter into "**dist/py_file_name**" folder
