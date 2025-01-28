@@ -404,12 +404,14 @@ actual_sec = time.localtime().tm_sec
 
 # Porcentaje de completado del script entero. Regla de tres calculando todos los links como el 100%.
 porcentaje_completado = 0
-def informe_porcenataje_completado():
+def informe_porcenataje_completado(link):
     porcentaje_unico_link = (1 * 100) / len(arr_links_grupos_obtenidos)
     # /3 porque son 3 los procesos para publicar: abrir cuadro/escribir/btn publicar, y quiero que en cada uno informe del porcentaje
     global porcentaje_completado 
     porcentaje_completado += porcentaje_unico_link/3
     print(f'{int(round(porcentaje_completado, 0))}{t_informe_porcenataje_completado_msg}')
+    print('Recordatorio de grupos: ' + arr_links_grupos_obtenidos)
+    print('Link actual - publicando en: ' + link)
 
 ######################################################################################################
 ################################# EL USUARIO ESCRIBE EL POST DESEADO #################################
@@ -463,7 +465,7 @@ def publicar_en_cada_grupo():
             ))
             escribe_algo_box.click()
             # Informar del porcentage completado del script total
-            informe_porcenataje_completado()
+            informe_porcenataje_completado(link)
         except Exception as err:
             print(f'Error 1 de tipo {type(err).__name__} - Encontrar cuadro de dialogo para escribir --> {err}')
         
@@ -491,7 +493,7 @@ def publicar_en_cada_grupo():
             # Tiempo de espera para que la miniatura del posible link de la publicación se cargue correctamente (tiempo de espera estimado, a ojimetro)
             time.sleep(2)
             # Informar del porcentage completado del script total
-            informe_porcenataje_completado()
+            informe_porcenataje_completado(link)
         except Exception as err:
             print(f'Error 2 de tipo {type(err).__name__} - Escribir en el recuadro --> {err}')
 
@@ -508,7 +510,7 @@ def publicar_en_cada_grupo():
         ))
             btn_publicar.click()
             # Informar del porcentage completado del script total
-            informe_porcenataje_completado()
+            informe_porcenataje_completado(link)
         except Exception as err:
             print(f'Error 3 de tipo {type(err).__name__} - Click en el boton Publicar --> {err}')
             
@@ -519,12 +521,13 @@ def publicar_en_cada_grupo():
         ))
         
         #Se vuelve a ejecutar el bucle for, hasta que no queden mas links en el arr --> arr_links_grupos_obtenidos
+        time.sleep(61) # Se ve que hay un limite de FB para publicar seguidamente por posible spam. Pondré de espera 1 minuto y 1 segundo a ver si lo pasa por alto.
 
 ################################# ABRIR LINKS Y PUBLICAR #################################
 ##########################################################################################
 
 def mensage_final_cerrar_bot():
-    informe_porcenataje_completado()
+    # informe_porcenataje_completado(link)
     print(t_mensage_final_cerrar_bot_contenido_publicado_en_todos_grupos)
 
     print(t_mensage_final_cerrar_bot_cerrando_en_10s_y_agradecimiento)
